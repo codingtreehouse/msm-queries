@@ -10,9 +10,4 @@ class ApplicationController < ActionController::Base
   def movies
     render({ :template => "layouts/movies.html.erb"})
   end
-
-  def directors
-    render({ :template => "layouts/directors.html.erb"})
-  end
-  
 end
