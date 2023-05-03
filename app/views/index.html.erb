@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nathan Memories Page</title>
+  <style type="text/css">
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    ::placeholder {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      margin-top: 20px;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+    button {
+      background-color: #4267b2;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      display: inline-block;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .comment {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .placeholder {
+      font-family: Arial, sans-serif;
+    }
+    .comment p {
+      margin: 0;
+      padding: 0;
+    }
+    .comment .author {
+      font-weight: bold;
+      margin-top: 10px;
+      height: 20px;
+      line-height: 0;
+    }
+    .comment .date {
+      font-size: 12px;
+            height: 20px;
+      line-height: 0;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Nathan Memories Page</h1>
+    <i>Please join friends and family of Nathan Johnson in sharing memories and thoughts</i>
+    <form action="/new_comment" enctype="multipart/form-data">
+      <input type="text" id="author" name="author" placeholder="Your name" required>
+      <textarea id="comment" name="comment" placeholder="Please add a memory or thought here..." required></textarea>
+      <input type="file" id="image" name="image">
+      <button type="submit">Post Memory</button>
+    </form>
+
+    <br>
+    <br>
+
+    <div class="comments">
+      <% @memory.each do |list|%>
+      <div class="comment">
+        <p class="author"><%= list.author %></p>
+        <p class="date"><%= list.created_at %></p>
+        <p class="content"><%= list.body %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>

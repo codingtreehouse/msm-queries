@@ -10,6 +10,9 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 
+gem "carrierwave"
+gem "cloudinary"
+
 # Use Active Model has_secure_password
 gem 'bcrypt'
 

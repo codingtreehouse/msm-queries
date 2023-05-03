@@ -1,14 +1,14 @@
 # == Schema Information
 #
-# Table name: characters
+# Table name: comments
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  author     :string
+#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  actor_id   :integer
-#  movie_id   :integer
+#  comment_id :integer
 #
-class Character < ApplicationRecord
+class Comments < ApplicationRecord
 
 end

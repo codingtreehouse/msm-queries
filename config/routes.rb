@@ -1,29 +1,10 @@
+
 Rails.application.routes.draw do
 
-  get("/directors" , { :controller => "directors" , :action => "index"}) 
+  get("/", {:controller => "comments", :action => "index"})
 
-  get("/directors/eldest", { :controller => "directors" , :action => "wisest"})
+  get("/new_comment", {:controller => "comments", :action => "new_comment"})
 
-  get("/directors/youngest", { :controller => "directors" , :action => "youngest"})
-
-  get("/directors/:an_id" , { :controller => "directors" , :action => "directors_details"})
-
-  get("/movies", { :controller => "movies" , :action => "index_movies"})
-
-  get("/movies/:movie_id" , { :controller => "movies" , :action => "movie_details"})
-
-  get("/actors", { :controller => "actors" , :action => "index_actors"})
-
-  get("/actors/:actor_id" , { :controller => "actors" , :action => "actor_details"})
-
-  get("/", { :controller => "application", :action => "homepage" })
-
-
-
-
-
- 
-
-
-
+  get("/new_photo", {:controller => "images", :action => "new_photo"})
+  get("/photos",{:controller => "images", :action => "photos"})
 end
